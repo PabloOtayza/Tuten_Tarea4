@@ -1,0 +1,40 @@
+<ion-content class="login-content" padding>
+  <ion-row class="logo-row">
+    <ion-col></ion-col>
+    <ion-col width-67>
+      <img src="https://i.pinimg.com/originals/25/d6/7e/25d67e1ab8761a9fce706554245b2bdb.png"/>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+  <div class="login-box">
+    <form>
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
+            
+            <ion-item>
+              <ion-input type="text" [(ngModel)]="inputEmail" placeholder="Email" name="inputEmail" required></ion-input>
+            </ion-item>
+            
+            <ion-item>
+              <ion-input type="password" [(ngModel)]="inputPassword" placeholder="Password" name="inputPassword" required></ion-input>
+            </ion-item>
+            
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row>
+        <ion-col class="signup-col">
+          <button ion-button class="submit-btn" (click)="logIn()" full type="submit">Ingresar</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-input type="text" style="color:red" [(ngModel)]="mensajeError" name="mensajeError"></ion-input>
+        </ion-col>
+      </ion-row>
+      
+    </form>
+  </div>
+</ion-content>

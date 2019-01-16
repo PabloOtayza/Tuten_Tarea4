@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Bookings</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-list inset>
+                    <ion-item>
+                        <ion-label>BookingID >=</ion-label>
+                        <ion-input type="number" (change)="filterBookings()" [(ngModel)]="filterBookingID" placeholder="Mayor a..." name="filterBookingID"
+                            required></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>BookingPrice >=</ion-label>
+                        <ion-input type="number" (change)="filterBookings()" [(ngModel)]="filterBookingPrice" placeholder="Mayor a..." name="filterBookingPrice"
+                            required></ion-input>
+                    </ion-item>
+            </ion-list>
+        </ion-row>
+    </ion-grid>
+    <ion-grid>
+        <ion-row style="font-size:13px">
+            <ion-col>BookingId</ion-col>
+            <ion-col>Cliente</ion-col>
+            <ion-col>Fecha de Creación</ion-col>
+            <ion-col>Dirección</ion-col>
+            <ion-col>Precio</ion-col>
+        </ion-row>
+        <ion-row style="font-size:13px" *ngFor="let a of data">
+            <ion-col>{{a.bookingId}}</ion-col>
+            <ion-col>{{a.bookingFields.firstName}} {{a.bookingFields.lastName}}</ion-col>
+            <ion-col>{{a.bookingTime}}</ion-col>
+            <ion-col>{{a.locationId.streetAddress}}</ion-col>
+            <ion-col>$ {{a.bookingPrice}}</ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
